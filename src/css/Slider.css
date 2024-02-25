@@ -1,0 +1,56 @@
+.slider-container {
+    padding: 0 4rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+    width: 100%;
+
+}
+
+.right-side {
+    width: 50%;
+
+}
+.heading {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 1.1;
+    color: #fff;
+    width: 85%;
+}
+
+.paragraph {
+    width: 70%;
+    font-size: 1.4rem;
+    margin-left: 1px;
+    color: #fff;
+
+}
+
+.left-side {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.image-container {
+    width: 100%;
+    height: 400px; /* Adjust this height to fit your design */
+    position: relative;
+    margin-left: 150px;
+
+}
