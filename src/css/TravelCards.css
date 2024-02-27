@@ -1,0 +1,65 @@
+
+.travelcards-headline{
+    margin-bottom: 30px;
+    font-style: italic;
+    margin-top: 15px;
+}
+.destinationitem-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.destination-item {
+    color: inherit;
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.4s;
+    height:260px;
+}
+
+.destinationitem-container:hover {
+    transform: scale(1.05);
+}
+
+.destination-item.destination-image {
+    max-width: 20%;
+}
+
+.destination-image__img {
+    max-width: 150px;
+    margin-right: 20px;
+}
+
+.destination-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.destination-item.destination-info {
+    flex: auto;
+    margin-left: 100px;
+    margin-top: -240px;
+    text-decoration: none;
+}
+
+.destination-title {
+    font-size: 1.5em;
+    color: black;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.destination-price{
+    /*font-style: italic;*/
+    color: #7b7b8b;
+    margin-bottom: 4px;
+    font-size: 1.0em;
+    margin-right: 110px;
+    text-decoration: none;
+}

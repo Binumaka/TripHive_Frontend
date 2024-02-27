@@ -1,0 +1,71 @@
+// Bookcards.tsx
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../css/TravelCards.css';
+import { IoArrowBackOutline } from "react-icons/io5";
+
+
+const TravelCards = ({ destination, headline }: { destination: any[] | null; headline: string }) => {
+    const [visibledestination, setVisibledestination] = useState(3);
+    const [seeMoreClicked, setSeeMoreClicked] = useState(false);
+    // const [cartItems, setCartItems] = useState<any[]>([]);
+
+
+    const handleSeeMore = () => {
+        setVisibledestination((prevVisibledestination) => prevVisibledestination + 3);
+        setSeeMoreClicked(true);
+    };
+
+    const handleGoBack = () => {
+        setVisibledestination(3);
+        setSeeMoreClicked(false);
+    };
+
+    // const handleAddToBooking = (plantItem: any) => {
+    //     setCartItems((prevCartItems) => [...prevCartItems, plantItem]);
+    //     console.log(`Added plant with ID ${plantItem._id} to the cart.`);
+    // };
+
+    return (
+        <div className="travelcards-container">
+            <h2 className="travelcards-headline">{headline}</h2>
+            {destination && visibledestination < destination.length && (
+                <button onClick={handleSeeMore} className="see-more-button">
+                    See More
+                </button>
+            )}
+            {seeMoreClicked && (
+                <Link to="/" className="back-icon" onClick={handleGoBack}>
+                    <IoArrowBackOutline />
+                </Link>
+            )}
+            <div className="destinationitem-container">
+                {Array.isArray(destination) && destination.length > 0 ? (
+                    <>
+                        {destination.slice(0, visibledestination).map((destinationItem) => (
+                            <div key={destinationItem._id} className="destination-item">
+                                <Link to={`/destinationdetails/${destinationItem._id}`} className="destination-link">
+                                    <div className="destination-image">
+                                        <img src={destinationItem.imageurl} alt=" " className="destination-image__img" />
+                                    </div>
+                                    <div className="destination-info">
+                                        <h2 className="destination-title">{destinationItem.destinationname}</h2>
+                                        <button
+                                            onClick={() => handleAddToCart(plantItem)} className="add-to-cart-button">
+                                            Add to Cart
+                                        </button>
+
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </>
+                ) : (
+                    <p>No destination available.</p>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default TravelCards;

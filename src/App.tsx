@@ -1,19 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./auth/login.tsx";
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ToastContainer } from 'react-toastify';
+import Home from "./Homepage/home.tsx";
 import Register from "./auth/register.tsx";
-import Home from "./Homepage/home.tsx"
+import 'react-toastify/dist/ReactToastify.css';
+import Login from "./auth/login.tsx";
+import Upload from "./admin/UploadDestination.tsx";
+
+
+const queryClient = new QueryClient();
 
 function App() {
     return (
-        <Router>
-            <div>
+        <QueryClientProvider client={queryClient}>
+            <Router>
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path='/register' element={<Register/>}/>
-                    <Route path='/' element={<Home />}/>
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/admin" element={<Upload/>}/>
                 </Routes>
-            </div>
-        </Router>
+            </Router>
+            <ToastContainer position='top-left' autoClose={900} />
+        </QueryClientProvider>
     );
 }
 
