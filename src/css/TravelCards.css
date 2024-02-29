@@ -21,7 +21,7 @@
     height:260px;
 }
 
-.destinationitem-container:hover {
+.destination-item:hover {
     transform: scale(1.05);
 }
 
@@ -51,15 +51,5 @@
 .destination-title {
     font-size: 1.5em;
     color: black;
-    font-style: italic;
-    text-decoration: none;
-}
-
-.destination-price{
-    /*font-style: italic;*/
-    color: #7b7b8b;
-    margin-bottom: 4px;
-    font-size: 1.0em;
-    margin-right: 110px;
     text-decoration: none;
 }

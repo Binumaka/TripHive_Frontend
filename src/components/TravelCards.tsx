@@ -1,4 +1,3 @@
-// Bookcards.tsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/TravelCards.css';
@@ -22,7 +21,7 @@ const TravelCards = ({ destination, headline }: { destination: any[] | null; hea
     };
 
     // const handleAddToBooking = (plantItem: any) => {
-    //     setCartItems((prevCartItems) => [...prevCartItems, plantItem]);
+    //     setBookingItems((prevBookingItems) => [...prevBookingItems, plantItem]);
     //     console.log(`Added plant with ID ${plantItem._id} to the cart.`);
     // };
 
@@ -43,18 +42,13 @@ const TravelCards = ({ destination, headline }: { destination: any[] | null; hea
                 {Array.isArray(destination) && destination.length > 0 ? (
                     <>
                         {destination.slice(0, visibledestination).map((destinationItem) => (
-                            <div key={destinationItem._id} className="destination-item">
-                                <Link to={`/destinationdetails/${destinationItem._id}`} className="destination-link">
+                            <div key={destinationItem.id} className="destination-item">
+                                <Link to={`/travelling/${destinationItem.id}`} className="destination-link">
                                     <div className="destination-image">
                                         <img src={destinationItem.imageurl} alt=" " className="destination-image__img" />
                                     </div>
                                     <div className="destination-info">
                                         <h2 className="destination-title">{destinationItem.destinationname}</h2>
-                                        <button
-                                            onClick={() => handleAddToCart(plantItem)} className="add-to-cart-button">
-                                            Add to Cart
-                                        </button>
-
                                     </div>
                                 </Link>
                             </div>

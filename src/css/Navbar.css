@@ -13,7 +13,6 @@
 }
 
 .logo {
-    position: relative;
     width: 270px;
     height: 80%;
     margin-left: 15px;
@@ -31,29 +30,27 @@
     padding: 14px;
     border: 2px solid #ddd;
     border-radius: 10px;
-    width: 465px;
+    width: 425px;
     height: 20%;
 }
 
 .search-icon{
     justify-content: center;
-    margin-left: 380px;
+    margin-left: 330px;
     margin-right:6px ;
     margin-top: -32px;
 }
 
 .button-container {
     position: relative;
-    width: 15%;
+    width: 10%;
     height: 80%;
-    margin-left: 10px;
-    margin-right: 18px;
     display: flex;
     align-items: center;
 }
 
 .navlist{
-    margin-left: 100px;
+    margin-left: 60px;
     margin-right: 50px;
     display: flex;
     gap: 80px;
@@ -79,6 +76,126 @@
 
 .nav-btn{
     justify-content: center;
+    margin-left: -20px;
+    margin-right:2px ;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+.dropdown-content h2{
+    justify-content: center;
+    margin-left: 6px;
+}
+
+.nav-btn:hover .dropdown-content {
+    display: block;
+}
+
+.adminnavlist {
+    margin-left: 100px;
+    margin-right: 50px;
+    display: flex;
+    gap: 120px;
+    align-items: center;
+}
+
+.adminnavlist a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: large;
+    align-items: center;
+    gap: 20px;
+}
+
+.adminBtn{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 20px;
+    margin-left: 8%;
+}
+
+.adminBtn a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: large;
+    margin-top: 8%;
+}
+
+.adminnav-btn{
+    justify-content: center;
     margin-left: 6px;
     margin-right:6px ;
 }
+
+.icon_admin {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Dark mode toggle switch */
+.toggle-container {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+.toggle-input:checked + .toggle-slider {
+    background-color: #2196F3; /* Blue color for checked state */
+}
+
+.toggle-input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
