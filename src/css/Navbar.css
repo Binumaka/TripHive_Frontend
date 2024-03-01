@@ -47,6 +47,8 @@
     height: 80%;
     display: flex;
     align-items: center;
+    margin-left: 4%;
+    gap: 20px;
 }
 
 .navlist{

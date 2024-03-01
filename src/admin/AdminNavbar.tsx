@@ -16,7 +16,7 @@ const AdminNavbar = () => {
             </div>
 
             <div className="adminnavlist">
-                <a href="/admindestination">
+                <a href="/admin">
                     <PiMapPinLineLight className="icon_admin"/>
                     Destinations
                 </a>
@@ -24,7 +24,7 @@ const AdminNavbar = () => {
                     <IoBookmarksOutline className="icon_admin"/>
                     Bookings
                 </a>
-                <a href="/users">
+                <a href="/userlist">
                     <AiOutlineUser className="icon_admin"/>
                     Users
                 </a>

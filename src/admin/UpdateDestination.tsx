@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useMutation } from 'react-query';
 import { toast } from 'react-toastify';
-import "./Update.css";
+import "./css/Update.css";
 import AdminNavbar from "./AdminNavbar.tsx";
 
 const UpdateDestination: React.FC = () => {
@@ -46,7 +46,7 @@ const UpdateDestination: React.FC = () => {
         },
         onSuccess: () => {
             toast.success('Destination details updated successfully!');
-            navigate('/');
+            navigate('/admin');
         },
         onError: () => {
             toast.error('Failed to update plant details. Please try again.');

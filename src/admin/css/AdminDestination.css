@@ -1,0 +1,101 @@
+/*.Admincontents {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+.AdminView-content {
+    position: relative;
+    width: 90%;
+    height: 50%;
+    overflow-y: auto;
+    background: white;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Admin-name{
+    margin-top:2% ;
+    font-size: 2.6em;
+    color:black;
+    font-family: 'Arial';
+
+}
+
+.Adminrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Admin-rows {
+    text-decoration: none;
+    color: inherit;
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.4s;
+    height:260px;
+    margin-top: 20px;
+}
+
+.Admin-rows:hover {
+    transform: scale(1.05);
+}
+
+
+.Admincategory:hover {
+    transform: scale(1.05);
+}
+
+.Admin-img img{
+    max-width: 199px;
+    margin-right: 20px;
+}
+
+.Admin-img {
+    max-width: 20%;
+}
+
+.Admin-text {
+    flex: auto;
+    margin-left: 210px;
+    margin-top: -210px;
+    justify-content: center;
+
+
+}
+
+.Admin-text h4 {
+    margin-bottom: 6px;
+    font-size: 1.6em;
+    white-space: normal;
+    margin-top: 10%;
+    font-style: italic;
+}
+
+
+.Admin-text p {
+    font-style: italic;
+    color: #7b7b8b;
+    margin-bottom: 4px;
+    font-size: 1.0em;
+    white-space: nowrap;
+
+}
+.Admin-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+
+}
+
+.Admin-buttons button {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+

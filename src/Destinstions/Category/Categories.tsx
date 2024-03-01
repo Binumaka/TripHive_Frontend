@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import "./Categories.css";
+import "../Category/Categories.css";
 import Navbar from "../../components/Navbar.tsx";
+import CategoryDisplay from "./CategoryDisplay.tsx";
 
 const Categories = () => {
-    const [destination, setPlant] = useState<any[]>([]);
+    // const [destination, setDestination] = useState<any[]>([]);
     const { category } = useParams<{ category: string }>();
     // const [cartItems, setCartItems] = useState<any[]>([]);
 
@@ -17,7 +18,7 @@ const Categories = () => {
 
 
                 if (Array.isArray(response.data) && response.data.length > 0) {
-                    setPlant(response.data);
+                    // setDestination(response.data);
                 } else {
                     console.error('Invalid response structure:', response.data);
                 }
@@ -45,26 +46,8 @@ const Categories = () => {
                     {category}
                 </h2>
                 <div className="destination_con">
-                    <div className="destinationslider-container">
-                        <div className="destinationslider">
-                            <div className="destinationslide">
-                                {destination && destination.length > 0 ? (
-                                    destination.map((destination) => (
-                                        <Link to={`/travelling/${destination.id}`} key={destination.id}
-                                              className="destinationDisplaycategory">
-                                            <img src={destination.imageurl}
-                                                 alt={`Cover of ${destination.destinationname}`}/>
-                                            <div className="destinationinfo_wrapper">
-                                                <h3>{destination.destinationname}</h3>
-                                            </div>
-                                        </Link>
-                                    ))
-                                ) : (
-                                    <p>No plants available.</p>
-                                )}</div>
-                        </div>
-                    </div>
-                </div>
+                    <CategoryDisplay/>
+            </div>
             </div>
         </>
     );

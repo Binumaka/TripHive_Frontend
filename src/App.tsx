@@ -10,8 +10,9 @@ import Upload from "./admin/UploadDestination.tsx";
 import Destinations from "./Destinstions/Destinations.tsx";
 import DestinationDetails from "./Destinstions/destinationDetails.tsx";
 import Update from "./admin/UpdateDestination.tsx";
-import AdminNavbar from "./admin/AdminNavbar.tsx";
 import Categories from "./Destinstions/Category/Categories.tsx";
+import AdminDestination from "./admin/AdminDestination.tsx";
+import UserList from "./admin/UsersList.tsx";
 
 
 const queryClient = new QueryClient();
@@ -26,10 +27,12 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/destination" element={<Destinations />} />
                     <Route path="/travelling/:id" element={<DestinationDetails />} />
-                    <Route path="/admin" element={<AdminNavbar/>}/>
+                    <Route path="/admin" element={<AdminDestination/>}/>
+                    <Route path="/userlist" element={<UserList/>}/>
                     <Route path="/upload" element={<Upload/>}/>
                     <Route path="/category/:category" element={<Categories/>}/>
                     <Route path="/update/:id" element={<Update/>}/>
+
                 </Routes>
             </Router>
             <ToastContainer position='top-left' autoClose={900} />

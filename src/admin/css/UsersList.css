@@ -1,0 +1,40 @@
+.userlist-card {
+    position: relative;
+    width: 1350px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px grey;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.userlist-card span {
+    font-size: 4rem;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+.userlist-info {
+    position: relative;
+    margin-top: 5px;
+    gap: 10px;
+    padding: 5px;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.userlist-info h2 {
+    font-size: 22px;
+    color: #222;
+    text-align: center;
+}
+
+.user-name {
+    color: brown;
+    font-weight: 600;
+    font-size: 20px;
+}
