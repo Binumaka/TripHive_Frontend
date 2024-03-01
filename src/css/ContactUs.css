@@ -1,0 +1,38 @@
+.contact-support-container {
+    max-width: 1000px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    /*background: powderblue;*/
+    margin: auto;
+    margin-top: 4%;
+}
+
+.contact-support-container h2 {
+    margin-top: 2%;
+    color: #333;
+}
+
+.contact-support-container p {
+    margin-top: 2%;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

@@ -12,6 +12,7 @@ import DestinationDetails from "./Destinstions/destinationDetails.tsx";
 import Update from "./admin/UpdateDestination.tsx";
 import Categories from "./Destinstions/Category/Categories.tsx";
 import AdminDestination from "./admin/AdminDestination.tsx";
+import ContactUs from "./components/ContactUs.tsx";
 import UserList from "./admin/UsersList.tsx";
 
 
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/destination" element={<Destinations />} />
                     <Route path="/travelling/:id" element={<DestinationDetails />} />
+                    <Route path="/contactus" element={<ContactUs />} />
                     <Route path="/admin" element={<AdminDestination/>}/>
                     <Route path="/userlist" element={<UserList/>}/>
                     <Route path="/upload" element={<Upload/>}/>
