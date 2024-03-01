@@ -51,36 +51,31 @@ const AdminDestination = () => {
                 <h2 className="Admin-name">
                     Available destination
                 </h2>
-
+                <div className="AdminCard_container">
                 <div className="Adminrow">
+                    <div className="Admincategory">
                     {destination && destination.length > 0 ? (
                         destination.map((destinationC) => (
                             <div key={destinationC.id} className="Admin-rows">
-                                <div className="Admin-item-content">
-                                    <div className="Admincategory">
-                                        <div className="Admin-img">
-                                            <img src={destinationC.imageurl} alt={`Cover of ${destinationC.destinationname}`} />
-                                            <div>
-                                                <div className="Admin-text">
-                                                    <h4 className="Adminname">{destinationC.destinationname}</h4>
-                                                    <div className="Admin-buttons">
-                                                        <button onClick={() => handleDelete(destinationC.id)}>Delete</button>
-                                                        <Link to={`/update/${destinationC.id}`}>
-                                                            <button>Edit</button>
-                                                        </Link>
-                                                    </div>
-
-                                                </div>
-                                            </div>
+                                <img src={destinationC.imageurl} alt={`Cover of ${destinationC.destinationname}`} />
+                                    <div className="Admin-text">
+                                        <h3>{destinationC.destinationname}</h3>
+                                        <div className="Admin-buttons">
+                                            <button onClick={() => handleDelete(destinationC.id)}>Delete</button>
+                                            <Link to={`/update/${destinationC.id}`}>
+                                                <button>Edit</button>
+                                            </Link>
                                         </div>
+
                                     </div>
                                 </div>
-                            </div>
 
                         ))
                     ) : (
                         <p>No destination available.</p>
                     )}
+                    </div>
+                </div>
                 </div>
             </div>
         </>

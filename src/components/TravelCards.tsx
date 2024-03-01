@@ -38,17 +38,17 @@ const TravelCards = ({ destination, headline }: { destination: any[] | null; hea
                     <IoArrowBackOutline />
                 </Link>
             )}
+            <div className="destinationcontainerContent">
+            <div className="desrinationrow">
             <div className="destinationitem-container">
                 {Array.isArray(destination) && destination.length > 0 ? (
                     <>
                         {destination.slice(0, visibledestination).map((destinationItem) => (
                             <div key={destinationItem.id} className="destination-item">
-                                <Link to={`/travelling/${destinationItem.id}`} className="destination-link">
-                                    <div className="destination-image">
-                                        <img src={destinationItem.imageurl} alt=" " className="destination-image__img" />
-                                    </div>
+                                <Link to={`/travelling/${destinationItem.id}`}>
+                                        <img src={destinationItem.imageurl} alt=" "/>
                                     <div className="destination-info">
-                                        <h2 className="destination-title">{destinationItem.destinationname}</h2>
+                                        <h2>{destinationItem.destinationname}</h2>
                                     </div>
                                 </Link>
                             </div>
@@ -58,6 +58,8 @@ const TravelCards = ({ destination, headline }: { destination: any[] | null; hea
                     <p>No destination available.</p>
                 )}
             </div>
+        </div>
+        </div>
         </div>
     );
 };

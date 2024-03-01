@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar'; // Import Navbar component
 import './css/Upload.css';
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";

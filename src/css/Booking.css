@@ -1,0 +1,85 @@
+.Container_Booking{
+    height: 89vh;
+    align-items: center;
+    justify-content: center;
+}
+.Btn_booking{
+    display: flex;
+    width: 20%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 40%;
+    gap: 20px;
+    /*background: #cccccc;*/
+}
+
+.wrapperBooking{
+    position: relative;
+    width: 40%;
+    height: 630px;
+    background: transparent;
+    border: 2px solid rgba(24, 23, 23, 0.5);
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+
+.Booking_containerinfo{
+    margin-left: 38%;
+    margin-top: 6%;
+}
+
+.inputBox_Booking{
+    position: relative;
+    width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    border: 2px solid #162938;
+    margin: 30px ;
+}
+
+.inputBox_Booking label{
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: -8s;
+}
+
+.inputBox_Booking input:focus~label,
+.inputBox_Booking input:valid~label{
+    top: -10px;
+}
+
+.inputBox_Booking input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    color: #162938;
+    font-weight: 600;
+    padding: 20px 10px 10px;
+}
+
+.Booking-btn{
+    width: 40%;
+    height: 45px;
+    margin-left: 30%;
+    margin-top: -1%;
+    background: #162938;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}

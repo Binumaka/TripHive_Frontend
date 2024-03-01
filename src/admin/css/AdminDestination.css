@@ -1,79 +1,83 @@
-/*.Admincontents {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-evenly;*/
-/*}*/
 .AdminView-content {
-    position: relative;
-    width: 90%;
-    height: 50%;
-    overflow-y: auto;
-    background: white;
-    margin-left: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    height: 100%;
+    align-items: start;
 }
 .Admin-name{
-    margin-top:2% ;
-    font-size: 2.6em;
-    color:black;
-    font-family: 'Arial';
+    height: 50px;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 2%;
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
+}
+.Admin-name h2{
+    margin-left: 5%;
+    font-weight: normal;
+}
 
+.AdminCard_container{
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .Adminrow {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Admincategory{
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .Admin-rows {
-    text-decoration: none;
-    color: inherit;
-    width: 25%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: transform 0.4s;
-    height:260px;
-    margin-top: 20px;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Admin-rows:hover {
+.Admin-rows:hover{
     transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
-
-.Admincategory:hover {
-    transform: scale(1.05);
+.Admin-rows img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.Admin-img img{
-    max-width: 199px;
-    margin-right: 20px;
-}
-
-.Admin-img {
-    max-width: 20%;
-}
 
 .Admin-text {
-    flex: auto;
-    margin-left: 210px;
-    margin-top: -210px;
-    justify-content: center;
-
-
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.Admin-text h4 {
-    margin-bottom: 6px;
-    font-size: 1.6em;
-    white-space: normal;
-    margin-top: 10%;
-    font-style: italic;
+.Admin-text h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.2em;
 }
 
 

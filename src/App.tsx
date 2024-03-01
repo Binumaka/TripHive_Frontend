@@ -14,6 +14,8 @@ import Categories from "./Destinstions/Category/Categories.tsx";
 import AdminDestination from "./admin/AdminDestination.tsx";
 import ContactUs from "./components/ContactUs.tsx";
 import UserList from "./admin/UsersList.tsx";
+import Booking from "./components/Booking.tsx";
+import BookingList from "./admin/Booking_List.tsx";
 
 
 const queryClient = new QueryClient();
@@ -28,13 +30,14 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/destination" element={<Destinations />} />
                     <Route path="/travelling/:id" element={<DestinationDetails />} />
+                    <Route path="/booking" element={<Booking/>}/>
                     <Route path="/contactus" element={<ContactUs />} />
                     <Route path="/admin" element={<AdminDestination/>}/>
                     <Route path="/userlist" element={<UserList/>}/>
+                    <Route path="/bookingList" element={<BookingList/>}/>
                     <Route path="/upload" element={<Upload/>}/>
                     <Route path="/category/:category" element={<Categories/>}/>
                     <Route path="/update/:id" element={<Update/>}/>
-
                 </Routes>
             </Router>
             <ToastContainer position='top-left' autoClose={900} />

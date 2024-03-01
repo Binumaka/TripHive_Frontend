@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import Navbar from "../components/Navbar.tsx";
 import "./destinationDetails.css";
 
-const DestinationDetails = () => {
+const DestinationDetails : React.FC =() => {
     const { id } = useParams<{ id: string }>();
     const [destination, setDestination] = useState<any | null>(null);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,6 +27,12 @@ const DestinationDetails = () => {
         fetchData();
     }, [id]);
 
+    const handleBookNow = (destinationId: string) => {
+        // Redirect user to booking page or perform other actions
+        console.log(`Book Now clicked for destination with ID ${destinationId}`);
+        navigate(`/booking`);
+    };
+
     if (!destination) {
         return <p>Loading...</p>;
     }
@@ -42,6 +49,9 @@ const DestinationDetails = () => {
                                 <h2 className="destinationdetailsname">{destination.destinationname}</h2>
                                 <h4 className="destinationDcategory">{destination.category}</h4>
                                 <p className="destinationdescription">{destination.description}</p>
+                                <button className="booknow_btn" onClick={() => handleBookNow(destination.id)}>
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>

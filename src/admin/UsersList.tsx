@@ -3,6 +3,7 @@ import { MdDelete } from 'react-icons/md';
 import { useQuery, useMutation } from 'react-query';
 import axios from 'axios';
 import AdminNavbar from "./AdminNavbar.tsx";
+import "../admin/css/UsersList.css";
 
 interface User {
     id: number;
@@ -15,8 +16,14 @@ const UserList: React.FC = () => {
 
     // Fetch users from the API
     const { data: users, refetch } = useQuery('GET_USERS', async () => {
-        const response = await axios.get<User[]>('http://localhost:8080/user/getAll');
-        return response.data;
+        try {
+            const response = await axios.get<User[]>('http://localhost:8080/user/getAll');
+            console.log("User data from API:", response.data); // Log user data
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+            throw error;
+        }
     });
 
     // Mutation for deleting a user
@@ -33,27 +40,35 @@ const UserList: React.FC = () => {
         },
     });
 
-    return (<>
-    <AdminNavbar/>
-        <div className="userlist">
-            <section className="userlist">
-                {isFetching && <p>Loading...</p>}
-                {!isFetching && users && users.length === 0 && <p>No users found.</p>}
-                {users && users.length > 0 && users.map((user) => (
-                    <div key={user.id} className="userlist-card flex">
-                        <div className="userlist-info flex">
-                            <h2>Username: {user.username}</h2>
-                            <h2>Email: {user.email}</h2>
-                        </div>
-                        <div className="edit-delete">
-                            <button onClick={() => deleteUser.mutate(user.id)}>
-                                <MdDelete size="2rem" />
-                            </button>
-                        </div>
+    return (
+        <>
+            <AdminNavbar/>
+            <div className="userList-contents">
+                <div className="userListContainer">
+                    <h3>Users Of TripHive</h3>
+                </div>
+                <div className="userWrapper">
+                    <div className="userlist-header">
+                        <h2>Username</h2>
+                        <h2>Email</h2>
                     </div>
-                ))}
-            </section>
-        </div>
+                    {isFetching && <p>Loading...</p>}
+                    {!isFetching && users && users.length === 0 && <p>No users found.</p>}
+                    {users && users.length > 0 && users.map((user) => (
+                        <div key={user.id} className="userlist-card">
+                            <div className="userlist-info flex">
+                                <h3>{user.username}</h3>
+                                <h3>{user.email}</h3>
+                                <div className="edit-delete">
+                                    <button onClick={() => deleteUser.mutate(user.id)}>
+                                        <MdDelete size="2rem"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     );
 };

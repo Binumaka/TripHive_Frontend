@@ -20,9 +20,9 @@ const AdminNavbar = () => {
                     <PiMapPinLineLight className="icon_admin"/>
                     Destinations
                 </a>
-                <a href="/booking">
+                <a href="/bookingList">
                     <IoBookmarksOutline className="icon_admin"/>
-                    Bookings
+                    BookingLists
                 </a>
                 <a href="/userlist">
                     <AiOutlineUser className="icon_admin"/>

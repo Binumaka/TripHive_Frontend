@@ -31,12 +31,6 @@ const Categories = () => {
         fetchData();
     }, [category]);
 
-    // const handleAddToCart = (plantItem: any) => {
-    //     setCartItems((prevCartItems) => [...prevCartItems, plantItem]);
-    //     console.log(`Added plant with ID ${plantItem.id} to the cart.`);
-    // };
-
-
     return (
 
         <>
